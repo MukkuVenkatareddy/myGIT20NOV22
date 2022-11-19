@@ -1,0 +1,12 @@
+Master side
+=====================================================================================================================================================
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+node side
+===========================================================================================================================================
+
+kubeadm join 172.30.0.205:6443 --token 6vupdq.kps1rz28x8yxajg2 \
+        --discovery-token-ca-cert-hash sha256:9e5347d3a8ab32bed27ffa619c1056641375f5bfa5492067386eff4dba64b898
